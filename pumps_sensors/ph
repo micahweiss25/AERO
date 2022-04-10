@@ -6,7 +6,7 @@
  # SKU    : SEN0161
 */
 #define SensorPin A0            //pH meter Analog output to Arduino Analog Input 0
-#define Offset 0.00            //deviation compensate. Test Ph against a solution with a know ph to determine offset. know solution ph 7, sensor says 6.88, offset is 0.12
+#define Offset 0.50            //deviation compensate. Test Ph against a solution with a know ph to determine offset. know solution ph 7, sensor says 6.88, offset is 0.12
 #define LED 13
 #define samplingInterval 20
 #define printInterval 800
