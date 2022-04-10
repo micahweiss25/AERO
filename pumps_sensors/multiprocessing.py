@@ -29,7 +29,7 @@ def mist_cycle():
         GPIO.cleanup()
 
 def balance_ph(ph):
-    res_vol = 10 # volume of reservoir in Liters
+    
     
 
 def res_maintain():
@@ -44,9 +44,16 @@ def res_maintain():
         # Should I pipe data from this function to a different one?
         ##### FOR NOW #####
         ph_balance = int(read_serial[read_serial.index('pH:')+3:read_serial.index('pH:')+7])
-        if ph_balance > 6.3 or ph_balance < 5.3:
-            balance_ph(ph_balance)
-
+        if ph_balance > 6.3:
+            GPIO.output(3, GPIO.HIGH)
+            sleep(5)
+            GPIO.output(3, GPIO.LOW)
+            sleep(300)
+        elif ph_balance < 5.3:
+            GPIO.output(4, GPIO.HIGH)
+            sleep(5)
+            GPIO.output(4, GPIO.LOW)
+            sleep(300)
 
 
 
