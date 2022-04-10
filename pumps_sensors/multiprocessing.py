@@ -40,6 +40,7 @@ def res_maintain():
     s = [0]
     while True:
         read_serial = ser.readline() ## find the format so you can just get numbers
+        print(read_serial)
         # or modify ph sketch 
         # Should I pipe data from this function to a different one?
         ##### FOR NOW #####
