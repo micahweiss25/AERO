@@ -20,10 +20,19 @@ for filename in os.listdir(directory):
 
 import json
 import numpy as np
+import os.path
 j = json.load(open('test.json'))
 jt  = json.load(open('train.json'))
 a = np.array([])
+b = np.array([])
 for i in jt['annotations']:
-    a = np.append(a,i['category_id'])
-np.savetxt('annotations_test_category_id.npy',a)
+    d = i['id']
+    if os.path.isfile(f'parsed_tomatos/{d}_tomato.jpg'):
+        a = np.append(a,i['category_id'])
+for i in j['annotations']:
+    d = i['id']
+    if os.path.isfile(f'parsed_tomatoes_test/{d}_tomato.jpg'):
+        b = np.append(b,i['category_id'])
+np.savetxt('annotations_train_category_id.npy',a)
+np.savetxt('annotations_test_category_id.npy',b)
 print(a)
