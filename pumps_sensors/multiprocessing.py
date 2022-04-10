@@ -27,11 +27,7 @@ def mist_cycle():
             sleep(5)
     except KeyboardInterrupt:
         GPIO.cleanup()
-
-def balance_ph(ph):
     
-    
-
 def res_maintain():
     try:
         ser = serial.Serial('/dev/ttyACM0',9600)
